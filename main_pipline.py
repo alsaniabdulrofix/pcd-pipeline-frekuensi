@@ -2,6 +2,9 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+# ==========================================
+# TAHAP 1: MODUL PREPROCESSING
+# ==========================================
 def preprocess_image(image_path):
     """Membaca citra, konversi ke grayscale, dan normalisasi dimensi (512x512)."""
     img = cv2.imread(image_path, 0)
