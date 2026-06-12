@@ -18,7 +18,24 @@ Sistem mampu melakukan dekomposisi fitur secara paralel:
 
 ## 🛠️ Cara Menjalankan Program
 Pastikan telah menginstal pustaka yang dibutuhkan:
+
 `pip install opencv-python numpy matplotlib`
+
 
 Jalankan perintah berikut di terminal:
 `python main_pipeline.py`
+
+## Cara install Virtual Environtment
+
+'python -m venv env'
+
+## Aktifkan Virtual Environment
+
+Untuk Windows (Command Prompt / CMD):
+'env\Scripts\activate'
+
+Untuk Windows (PowerShell):
+'.\env\Scripts\Activate.ps1'
+
+Untuk macOS / Linux:
+'source env/bin/activate'
