@@ -47,3 +47,14 @@ def create_hpf_mask(shape, radius=60):
     mask[pusat_baris - radius : pusat_baris + radius, 
          pusat_kolom - radius : pusat_kolom + radius] = 0
     return mask
+
+
+def apply_mask_and_inverse(f_shift, mask):
+    
+    f_filtered = f_shift * mask
+    
+    f_ishift = np.fft.ifftshift(f_filtered)
+    img_back = np.fft.ifft2(f_ishift)
+    
+    img_back = np.abs(img_back)
+    return img_back
