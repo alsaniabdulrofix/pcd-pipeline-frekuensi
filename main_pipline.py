@@ -14,6 +14,10 @@ def preprocess_image(image_path):
     img_resized = cv2.resize(img, (512, 512))
     return img_resized
 
+
+# ==========================================
+# TAHAP 2: MODUL TRANSFORMASI SPEKTRUM (FFT)
+# ==========================================
 def transform_to_frequency(img):
     """Konversi ranah spasial ke ranah frekuensi beserta pergeseran ke pusat matriks."""
     f_transform = np.fft.fft2(img)
