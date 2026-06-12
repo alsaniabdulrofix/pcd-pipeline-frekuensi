@@ -23,3 +23,24 @@ def transform_to_frequency(img):
     f_transform = np.fft.fft2(img)
     f_shift = np.fft.fftshift(f_transform)
     return f_shift
+
+
+def create_lpf_mask(shape, radius=60):
+    """Konstruksi Ideal Low Pass Filter (mempertahankan frekuensi rendah/warna dasar)."""
+    baris, kolom = shape
+    pusat_baris, pusat_kolom = baris // 2, kolom // 2
+    
+    mask = np.zeros((baris, kolom), np.uint8)
+    mask[pusat_baris - radius : pusat_baris + radius, 
+         pusat_kolom - radius : pusat_kolom + radius] = 1
+    return mask
+
+def create_hpf_mask(shape, radius=60):
+    """Konstruksi Ideal High Pass Filter (mempertahankan frekuensi tinggi/tepi objek)."""
+    baris, kolom = shape
+    pusat_baris, pusat_kolom = baris // 2, kolom // 2
+    
+    mask = np.ones((baris, kolom), np.uint8)
+    mask[pusat_baris - radius : pusat_baris + radius, 
+         pusat_kolom - radius : pusat_kolom + radius] = 0
+    return mask
