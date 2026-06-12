@@ -25,6 +25,9 @@ def transform_to_frequency(img):
     return f_shift
 
 
+# ==========================================
+# TAHAP 3: MODUL KONSTRUKSI FILTER MASKING
+# ==========================================
 def create_lpf_mask(shape, radius=60):
     
     baris, kolom = shape
